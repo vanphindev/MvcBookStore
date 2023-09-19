@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewBag.Title = "Dangky";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<section>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+    <!--Bắt Đầu Phần Nội Dung-->
+        <div class="noi-dung">
+            <div class="form">
+                <h2 style="color:#fb3377;text-align:center;font-weight:700">TRANG ĐĂNG KÝ</h2>
+                <form action="">
+                    <div class="input-form">
+                        <span> Họ tên khách hàng:</span>
+                        @Html.TextBox("HotenKH")
+                        @ViewData["Loi1"]
+                    </div>
+                    <div class="input-form">
+                        <span> Tên đăng ký:</span>
+                        @Html.TextBox("TenDN")
+                        @ViewData["Loi2"]
+                    </div>
+                    <div class="input-form">
+                        <span>Mật Khẩu:</span>
+                        @Html.Password("MatKhau")
+                        @ViewData["Loi3"]
+                    </div>
+                    <div class="input-form">
+                        <span>Nhập lại mật khẩu:</span>
+                        @Html.Password("Matkhaunhaplai")
+                        @ViewData["Loi4"]
+                    </div>
+                    <div class="input-form">
+                        <span> Email:</span>
+                        @Html.TextBox("Email")
+                        @ViewData["Loi5"]
+                    </div>
+                    <div class="input-form">
+                        <span> Điện thoại:</span>
+                        @Html.TextBox("Dienthoai")
+                        @ViewData["Loi6"]
+                    </div>
+                    <div class="input-form">
+                        <span> Địa chỉ:</span>
+                        @Html.TextBox("Diachi")
+                        @ViewData["Loi7"]
+                    </div>
+                    <div class="input-form">
+                        <span> Ngày sinh:</span>
+                        <input type="date" name="Ngaysinh" />
+                    </div>
+                    <div class="input-form">
+                        <input type="submit" value="Đăng Ký" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    <!--Kết Thúc Phần Nội Dung-->
+    }
+</section>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    section .noi-dung .form {
+        width: 350px;
+        position: relative;
+        left: 30%;
+    }
+
+        section .noi-dung .form .input-form {
+            margin-bottom: 20px;
+        }
+
+            section .noi-dung .form .input-form span {
+                font-size: 16px;
+                margin-bottom: 5px;
+                display: inline-block;
+                color: #607db8;
+                letter-spacing: 1px;
+            }
+
+            section .noi-dung .form .input-form input {
+                width: 100%;
+                padding: 10px 20px;
+                outline: none;
+                border: 1px solid #607d8b;
+                font-size: 16px;
+                letter-spacing: 1px;
+                color: #607d8b;
+                background: transparent;
+                border-radius: 30px;
+            }
+
+                section .noi-dung .form .input-form input[type="submit"] {
+                    background: #ff4584;
+                    color: #fff;
+                    outline: none;
+                    border: none;
+                    font-weight: 500;
+                    cursor: pointer;
+                    box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.12), 0 4px 4px rgba(0,0,0,0.12), 0 8px 8px rgba(0,0,0,0.12), 0 16px 16px rgba(0,0,0,0.12);
+                }
+
+                    section .noi-dung .form .input-form input[type="submit"]:hover {
+                        background: #f53677;
+                    }
+
+            section .noi-dung .form .input-form p {
+                color: #607d8b;
+            }
+
+                section .noi-dung .form .input-form p a {
+                    color: #ff4584;
+                }
+</style>

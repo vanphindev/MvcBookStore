@@ -1,0 +1,33 @@
+﻿@model  IEnumerable<MvcBookStore.Models.Sach>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2 style="color:red;text-align:center">SÁCH THEO NHÀ XUẤT BẢN</h2>
+<div class="row">
+    @foreach (var Sach in Model)
+    {
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <li>
+                    <a href="@Url.Action("Details","BookStore",new { id = Sach.MaSach})">
+                        <img alt="@Sach.TenSach" src="~/product_imgs/@Sach.AnhBia" />
+                        <span>@Sach.TenSach</span>
+                    </a>
+
+                    <div class="ratings">
+                        <p class="pull-right">15 reviews</p>
+                        <p>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                        </p>
+                    </div>
+                </li>
+            </div>
+        </div>
+    }
+</div>

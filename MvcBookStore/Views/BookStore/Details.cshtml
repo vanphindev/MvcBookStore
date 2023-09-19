@@ -1,0 +1,50 @@
+﻿<style>
+    .dathang {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        float: right;
+    }
+
+        .dathang:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+</style>
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>THÔNG TIN VỀ CHI TIẾT SÁCH</h2>
+<h3>Tên Sách : @Model.TenSach</h3>
+<div class="col-sm-6 col-lg-4 col-md-6">
+    <div>
+        <img alt="@Model.TenSach" width="100%" src="~/product_imgs/@Model.AnhBia" />
+    </div>
+</div>
+<div class="col-sm-6 col-lg-4 col-md-6">
+    <div>
+        <p style="color:#ff0000; font-size:25px"> MÔ TẢ :</p>
+        @*<p style="text-align:justify"> @Model.MoTa </p>*@
+        <p>@Html.Raw(Model.MoTa)</p>
+    </div>
+    <div>
+        <p style="color:#ff0000; font-size:25px">
+            GIÁ BÁN :
+            @Model.GiaBan VND
+        </p>
+    </div>
+    <div class="dathang">
+        <a href="@Url.Action("ThemGiohang","Cart", new {@iMasach = @Model.MaSach , @strURL = Request.Url.ToString()})"> THÊM VÀO GIỎ HÀNG </a>
+    </div>
+</div>
+

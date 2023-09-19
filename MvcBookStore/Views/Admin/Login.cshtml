@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="~/Content/assets/css/style.css" />
+    @*<script src="~/Content/assets/script/main.js"></script>*@
+</head>
+<body>
+    <h2 style="text-align:center;padding:5px">TRANG ADMINISTRATION</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <div class="login-page">
+            <div class="form" style=" border-radius:20px;background: border-box;">
+                <h3>@ViewBag.Thongbao</h3>
+                @ViewData["Loi1"]
+                @ViewData["Loi2"]
+                <form class="login-form">
+                    <input style="border-radius:5px;" type="text" placeholder="Tài Khoản" name="username" />
+                    <input style="border-radius:5px;" type="password" placeholder="Mật Khẩu" name="password" />
+                    <button style="border-radius:5px;">login</button>
+                    @*<p class="message">
+                        Not registered? <a href="#">Create an account</a>
+                    </p>*@
+                </form>
+            </div>
+        </div>
+    }
+</body>
+</html>
